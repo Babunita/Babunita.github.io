@@ -1,0 +1,223 @@
+/* Global Styles */
+body {
+    background: url(https://media1.tenor.com/m/M3lexDdZRTEAAAAd/pixel-art.gif) center/cover no-repeat;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Fade-out effect */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Container for .hehe */
+.hehe {
+    border: 25px solid rgba(221, 21, 21, 0.856);
+    display: block;
+    margin: auto;
+    margin-top: 100px;
+    width: 80%;
+    max-width: 600px;
+    border-style: inset;
+}
+
+/* Absolute positioned elements */
+.babs, .cute {
+    position: absolute;
+    justify-content: space-between;
+}
+
+/* .babs styling */
+.babs {
+    margin-top: 150px;
+    margin-left: 200px;
+    width: 390px;
+}
+
+/* .cute styling */
+.cute {
+    right: 30%;
+    margin-top: 300px;
+    margin-right: 300px;
+}
+
+/* Button container */
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+/* Button Styles */
+.btn {
+    padding: 15px 30px;
+    font-size: xx-large;
+    border: 2px solid #3498db;
+    background-color: #3498db;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    margin: 10px;
+    min-width: 100px; /* Ensure minimum button size */
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background-color: #2980b9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: scale(0.98);
+    background-color: #1f6899;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.btn:focus {
+    outline: none;
+    transform: scale(1.1);
+    background-color: #1c6ca3;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Title (h1) Styles */
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background: url(https://media1.tenor.com/m/FsJikCVScJQAAAAC/no-se-xd.gif) center/cover;
+    transition: width 1s;
+    margin: 20px auto;
+    border: 3px inset rgba(221, 21, 21, 0.856);
+    border-radius: 50px;
+    text-align: center;
+    font-family: cursive;
+    color: black;
+}
+
+h1 .text {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s, visibility 1s;
+    color: white;
+    font-size: 28px;
+}
+
+h1:hover .text {
+    opacity: 1;
+    visibility: visible;
+}
+
+h1:hover {
+    width: 640px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Mobile (up to 600px) */
+@media (max-width: 600px) {
+    body {
+        background-size: contain; /* Adjust background on small screens */
+    }
+
+    /* Adjust images for small screens */
+    .hehe, .babs, .cute {
+        width: 100%;
+        max-width: none;
+        margin-top: 20px;
+    }
+
+    .hehe {
+        margin-top: 20px;
+    }
+
+    .babs, .cute {
+        position: static; /* Disable absolute positioning */
+        margin: 0;
+    }
+
+    /* Adjust h1 for small screens */
+    h1 {
+        width: 100%;
+        margin: 20px 0;
+        height: auto;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    h1:hover {
+        width: 100%;
+    }
+
+    /* Adjust buttons for mobile */
+    .btn {
+        font-size: large;
+        padding: 10px 20px;
+        width: 100%; /* Make buttons fill the width */
+        max-width: 200px;
+    }
+
+    .button {
+        flex-direction: column; /* Stack buttons vertically */
+    }
+}
+
+/* Tablet (601px to 1024px) */
+@media (max-width: 1024px) and (min-width: 601px) {
+    .hehe {
+        width: 80%;
+        margin-top: 70px;
+    }
+
+    .babs, .cute {
+        margin: 50px 0;
+        width: 60%;
+    }
+
+    h1 {
+        width: 60%;
+        margin: 20px 0;
+    }
+
+    .btn {
+        font-size: x-large;
+        padding: 12px 25px;
+    }
+}
+
+/* Desktop (1025px and above) */
+@media (min-width: 1025px) {
+    .hehe {
+        width: 600px;
+        margin-top: 100px;
+    }
+
+    .babs {
+        top: 10%;
+        margin-left: 200px;
+        width: 390px;
+    }
+
+    .cute {
+        margin-right: 180px;
+        top: 2%;
+        width: 390px;
+    }
+
+    h1 {
+        width: 100px;
+        margin: 20px auto;
+    }
+
+    .btn {
+        font-size: xx-large;
+        padding: 15px 30px;
+    }
+}

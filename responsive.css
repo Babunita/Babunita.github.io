@@ -1,0 +1,89 @@
+/* Global Styles */
+body {
+    background: url(https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDNuajVhN2E4MGJtNWxicnM3Z3FydTcyMGhmdWM4NjdxOXJndXM4aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3s6inaVnOnO6L3vbwR/giphy.webp);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Image Styling */
+img {
+    position: fixed;
+    margin-left: 700px;  /* Initial off-screen position */
+    margin-top: 200px;
+    width: 900px;
+    opacity: 0;  /* Start as invisible */
+    animation: fadeIn 2s ease-out forwards;  /* Apply fadeIn animation */
+    animation-delay: 3s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;  /* Start as invisible */
+    }
+    100% {
+        opacity: 1;  /* End as fully visible */
+    }
+}
+
+/* .kanta class stays invisible */
+.kanta {
+    opacity: 0.0;  /* Keep it invisible */
+    position: absolute;
+    /* No visibility or changes needed */
+}
+
+/* Media Queries for Responsiveness */
+
+/* Mobile View (up to 600px wide) */
+@media (max-width: 600px) {
+    body {
+        background-size: cover;  /* Ensure background covers the screen */
+    }
+
+    /* Adjust image properties for mobile */
+    img {
+        position: absolute;
+        margin-left: 0;
+        margin-top: 50px; /* Reduce top margin for smaller screens */
+        width: 80%; /* Make the image smaller on mobile */
+        left: 10%; /* Center the image horizontally */
+    }
+
+    /* .kanta remains hidden and does not affect the layout */
+    .kanta {
+        opacity: 0.0;  /* Invisible */
+    }
+}
+
+/* Tablet View (601px to 1024px wide) */
+@media (max-width: 1024px) and (min-width: 601px) {
+    img {
+        position: absolute;
+        margin-left: 0;
+        margin-top: 100px; /* Reduced margin-top for tablets */
+        width: 70%;  /* Make image smaller on tablets */
+        left: 15%; /* Adjust to center the image with some space */
+    }
+
+    /* .kanta remains hidden and does not affect the layout */
+    .kanta {
+        opacity: 0.0;  /* Invisible */
+    }
+}
+
+/* Desktop View (1025px and above) */
+@media (min-width: 1025px) {
+    img {
+        position: fixed;
+        margin-left: 700px; /* Original off-screen position for desktop */
+        margin-top: 200px;
+        width: 900px; /* Full width image on desktop */
+    }
+
+    /* .kanta remains hidden and does not affect the layout */
+    .kanta {
+        opacity: 0.0;  /* Invisible */
+    }
+}
